@@ -140,6 +140,6 @@ module asych_fifo #(parameter      DATA_WIDTH = 4,
 	                 (wr_ptr_gray[ADDR_WIDTH] != rd_ptr_sync2[ADDR_WIDTH]);
 
   //Data-out
-   assign data_out    = (rd_en) ? mem[rd_ptr[ADDR_WIDTH-1:0]] : 'b0;
+   assign data_out    =  mem[rd_ptr[ADDR_WIDTH-1:0]];
 
 endmodule
