@@ -136,7 +136,7 @@ module asych_fifo #(parameter      DATA_WIDTH = 4,
 
   //Empty and Full Generation
    assign fifo_Mty    = (((wr_ptr_sync2 == 'b0) && (rd_ptr_gray == 'b0)) || (rd_ptr_gray == wr_ptr_sync2)) ? 1'b1 : 1'b0;
-   assign fifo_full   = ({~wr_ptr_gray[ADDR_WIDTH-1],wr_ptr_gray[ADDR_WIDTH-1:0]} == {~rd_ptr_sync2[ADDR_WIDTH-1],rd_ptr_sync2[ADDR_WIDTH-1:0]}) && 
+   assign fifo_full   = ({~wr_ptr_gray[ADDR_WIDTH-1],wr_ptr_gray[ADDR_WIDTH-2:0]} == {rd_ptr_sync2[ADDR_WIDTH-1],rd_ptr_sync2[ADDR_WIDTH-2:0]}) && 
 	                 (wr_ptr_gray[ADDR_WIDTH] != rd_ptr_sync2[ADDR_WIDTH]);
 
   //Data-out
