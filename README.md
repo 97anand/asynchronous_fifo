@@ -9,6 +9,7 @@ Pointers are synchronized using gray code synchronizers.
 
 
 
+
 Finding the FIFO Depth : 
 
 Eg : 
